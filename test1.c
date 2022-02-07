@@ -1,13 +1,27 @@
 #include<stdio.h>
+#include<math.h>
+int area(float A ,float B, float C)
+{
+	float p,s;
+	p = (A + B + C) / 2;
+	s = sqrt(p * (p - A) * (p - B) * (p - C));
+	return s;
+
+}
 int main()
 {
-	char arr[] = { 21,32,35,18,40 };
-	int i = 0;
-	int sum = 0;
-	for (i = 0; i < 5; i++)
+	float a, b, c,S;
+	scanf_s("%f%f%f", &a, &b, &c);
+	S=area(a,b,c);
+	if (a + b > c && a + c > b && b + c > a)
 	{
-		sum += arr[i];
+		printf("S=%f\n", S);
 	}
-	printf("%d", sum / 5);
+	else
+	{
+		printf("error\n");
+	}
 	return 0;
+
+
 }
